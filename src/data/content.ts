@@ -98,6 +98,45 @@ export const instagramPosts: InstagramPost[] = [
   { id: 'ig-09', type: 'post', title: 'Cultura andina', url: 'https://www.instagram.com/p/DYUqgXdlj8X/', image: media.museo },
 ];
 
+// Relato de la experiencia entrelazado con los reels de cada momento.
+export type ExperienceMoment = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  reelIds: string[];
+};
+
+export const experienceStory: ExperienceMoment[] = [
+  {
+    eyebrow: 'El comienzo',
+    title: 'Salida desde Salta, rumbo a la altura',
+    description:
+      'El día arranca temprano en la ciudad. Un tramo en colectivo atraviesa el valle de Lerma y la Quebrada del Toro, mientras el paisaje se vuelve cada vez más imponente.',
+    reelIds: ['ig-01', 'ig-03'],
+  },
+  {
+    eyebrow: 'Alta montaña',
+    title: 'San Antonio de los Cobres y el ascenso en tren',
+    description:
+      'En San Antonio de los Cobres se hace el transbordo al tren turístico. Desde allí, la formación sube gradualmente hasta los 4.220 msnm acompañada por personal capacitado.',
+    reelIds: ['ig-02', 'ig-06'],
+  },
+  {
+    eyebrow: 'El ícono',
+    title: 'El Viaducto La Polvorilla',
+    description:
+      'La llegada al Viaducto La Polvorilla es el momento más esperado: 224 metros de largo y 63 de alto, una proeza de la ingeniería ferroviaria suspendida sobre la Puna.',
+    reelIds: ['ig-04', 'ig-07'],
+  },
+  {
+    eyebrow: 'Paisaje y cultura',
+    title: 'Pueblos andinos y gastronomía regional',
+    description:
+      'El regreso reserva tiempo para fotografiar, caminar y disfrutar la cultura andina: mercados, artesanías y la calidez de los pueblos de altura.',
+    reelIds: ['ig-05', 'ig-09'],
+  },
+];
+
 export const contact = {
   address: 'Ameghino 660 — Estación Central de Trenes, Salta, Argentina',
   postal: 'A4400CRL',

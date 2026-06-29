@@ -19,6 +19,22 @@ function TrainGlyph() {
   );
 }
 
+/* Colectivo monocromático: tramo Salta → San Antonio de los Cobres. */
+function BusGlyph() {
+  return (
+    <svg width="56" height="40" viewBox="0 0 56 40" fill="none" aria-hidden="true">
+      <rect x="3" y="8" width="50" height="22" rx="4" className="fill-puna-800" />
+      <rect x="7" y="12" width="9" height="7" rx="1" className="fill-puna-100" />
+      <rect x="19" y="12" width="9" height="7" rx="1" className="fill-puna-100" />
+      <rect x="31" y="12" width="9" height="7" rx="1" className="fill-puna-100" />
+      <rect x="43" y="12" width="7" height="7" rx="1" className="fill-puna-100" />
+      <rect x="2" y="29" width="52" height="3" rx="1.5" className="fill-puna-900" />
+      <circle cx="16" cy="33" r="5" className="fill-puna-900" />
+      <circle cx="40" cy="33" r="5" className="fill-puna-900" />
+    </svg>
+  );
+}
+
 /* Bocanadas de humo que ascienden desde la chimenea. */
 function Steam({ className = '' }: { className?: string }) {
   return (
@@ -73,10 +89,22 @@ export function Recorrido() {
             />
           </div>
 
+          {/* Tramo 1: colectivo de Salta a San Antonio de los Cobres. */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-1/2 z-20 -translate-y-1/2 animate-train-run"
+            className="pointer-events-none absolute top-1/2 z-20 -translate-y-1/2 animate-bus-leg"
             style={{ left: '-8%' }}
+          >
+            <div className="animate-chug">
+              <BusGlyph />
+            </div>
+          </div>
+
+          {/* Tramo 2: el tren parte desde San Antonio hacia La Polvorilla. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute top-1/2 z-20 -translate-y-1/2 animate-train-leg"
+            style={{ left: '62%' }}
           >
             <div className="relative animate-chug">
               <Steam className="absolute -top-3 right-2 h-0 w-0" />
@@ -116,9 +144,22 @@ export function Recorrido() {
             />
           </div>
 
+          {/* Tramo 1: colectivo descendiendo hasta San Antonio. */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-4 z-20 -translate-x-1/2 animate-train-run-y"
+            className="pointer-events-none absolute left-4 z-20 -translate-x-1/2 animate-bus-leg-y"
+            style={{ top: '-4%' }}
+          >
+            <div className="animate-chug rotate-90">
+              <BusGlyph />
+            </div>
+          </div>
+
+          {/* Tramo 2: el tren parte desde San Antonio. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-4 z-20 -translate-x-1/2 animate-train-leg-y"
+            style={{ top: '62%' }}
           >
             <div className="animate-chug rotate-90">
               <TrainGlyph />

@@ -50,15 +50,34 @@ const config: Config = {
         widest: '0.2em',
       },
       keyframes: {
-        // El tren recorre el riel horizontal (desktop).
-        'train-run': {
-          '0%': { left: '-8%' },
-          '100%': { left: '104%' },
+        // Tramo 1: el colectivo va de Salta a San Antonio de los Cobres (~62%),
+        // hace una pausa y se desvanece para dar paso al tren (desktop).
+        'bus-leg': {
+          '0%': { left: '-8%', opacity: '1' },
+          '38%': { left: '62%', opacity: '1' },
+          '46%': { left: '62%', opacity: '1' },
+          '50%': { left: '62%', opacity: '0' },
+          '100%': { left: '62%', opacity: '0' },
         },
-        // El tren desciende el riel vertical (mobile).
-        'train-run-y': {
-          '0%': { top: '-4%' },
-          '100%': { top: '104%' },
+        // Tramo 2: el tren aparece en San Antonio y continúa hasta el final (desktop).
+        'train-leg': {
+          '0%, 46%': { left: '62%', opacity: '0' },
+          '50%': { left: '62%', opacity: '1' },
+          '100%': { left: '104%', opacity: '1' },
+        },
+        // Versión vertical (mobile): colectivo hasta San Antonio.
+        'bus-leg-y': {
+          '0%': { top: '-4%', opacity: '1' },
+          '38%': { top: '62%', opacity: '1' },
+          '46%': { top: '62%', opacity: '1' },
+          '50%': { top: '62%', opacity: '0' },
+          '100%': { top: '62%', opacity: '0' },
+        },
+        // Versión vertical (mobile): tren desde San Antonio hasta el final.
+        'train-leg-y': {
+          '0%, 46%': { top: '62%', opacity: '0' },
+          '50%': { top: '62%', opacity: '1' },
+          '100%': { top: '104%', opacity: '1' },
         },
         // Bocanadas de humo que se elevan y disipan.
         steam: {
@@ -73,8 +92,10 @@ const config: Config = {
         },
       },
       animation: {
-        'train-run': 'train-run 16s linear infinite',
-        'train-run-y': 'train-run-y 16s linear infinite',
+        'bus-leg': 'bus-leg 18s ease-in-out infinite',
+        'train-leg': 'train-leg 18s ease-in-out infinite',
+        'bus-leg-y': 'bus-leg-y 18s ease-in-out infinite',
+        'train-leg-y': 'train-leg-y 18s ease-in-out infinite',
         steam: 'steam 2s ease-out infinite',
         chug: 'chug 0.6s ease-in-out infinite',
       },

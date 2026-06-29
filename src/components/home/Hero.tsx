@@ -8,8 +8,8 @@ export function Hero() {
     <section id="inicio" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/tren-hd.png"
-          alt="Tren a las Nubes recorriendo el paisaje de altura de la Puna salteña"
+          src="/fondo-home.png"
+          alt="Tren a las Nubes cruzando el Viaducto La Polvorilla bajo un cielo estrellado de la Puna salteña"
           fill
           priority
           sizes="100vw"
