@@ -15,9 +15,9 @@ export function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        {/* Velo oscurecido para asegurar legibilidad del texto y botones. */}
+        {/* Velo oscurecido de izquierda a derecha: casi negro a la izquierda para el texto, claro a la derecha para ver el tren. */}
         <div className="absolute inset-0 bg-puna-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-puna-950/80 via-puna-950/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-puna-950/95 via-puna-950/70 to-transparent" />
       </div>
 
       <div className="container-content relative flex min-h-[88vh] flex-col justify-end pb-12 pt-28">
