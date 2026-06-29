@@ -14,7 +14,7 @@ export function VideoBand() {
         poster={media.gallery2}
         aria-hidden="true"
       >
-        <source src="/videos/large.mp4" type="video/mp4" />
+        <source src="/videos/Trendelasnubes.mp4" type="video/mp4" />
       </video>
 
       {/* Velo monocromático aligerado + gradiente inferior para legibilidad. */}
